@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:pakhi_dress_house/screen/home_screen.dart';
+import 'package:pakhi_dress_house/controller/heading_controller.dart';
+import 'package:provider/provider.dart';
+import '../screen/my_cart_screen.dart';
 
-void main() => runApp(MaterialApp(
-    home: HomeScreen(),
-    theme: ThemeData(
-      textTheme: TextTheme(bodyText1: TextStyle(color: Colors.black)),
-    ),
-    debugShowCheckedModeBanner: false));
+void main() => runApp(
+      MaterialApp(
+        home: ChangeNotifierProvider(
+            create: (context) => HeadingController(), child: MyCartScreen()),
+        debugShowCheckedModeBanner: false,
+      ),
+    );

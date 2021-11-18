@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:pakhi_dress_house/controller/heading_controller.dart';
+import '../controller/heading_controller.dart';
+import '../screen/feed_screen.dart';
+import '../screen/for_you_screen.dart';
+import '../screen/new_collection.dart';
+import '../screen/trending_screen.dart';
 import 'package:provider/provider.dart';
 
 class CategoryHeading extends StatelessWidget {
@@ -8,6 +12,13 @@ class CategoryHeading extends StatelessWidget {
     'New Collection',
     'Trending',
     'For You',
+  ];
+
+  final List<Widget> screens = [
+    FeedScreen(),
+    NewCollectionScreen(),
+    TrendingScreen(),
+    ForYouScreen(),
   ];
 
   @override
