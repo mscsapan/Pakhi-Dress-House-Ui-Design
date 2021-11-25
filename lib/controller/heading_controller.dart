@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pakhi_dress_house/model/product_model.dart';
+import '../model/product_model.dart';
 
 class HeadingController extends ChangeNotifier {
   int position = 0;
