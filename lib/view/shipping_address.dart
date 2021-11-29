@@ -10,7 +10,6 @@ class ShippingAddress extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
-    double screenWidth = MediaQuery.of(context).size.width;
     return Container(
       height: screenHeight * 0.2,
       width: double.infinity,
@@ -21,24 +20,31 @@ class ShippingAddress extends StatelessWidget {
         margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 12.0, vertical: 8.0),
-              child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    headingText('Shipping Address'),
-                    Chip(
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(6.0)),
-                        label: Text('Change')),
-                  ])),
+            padding:
+                const EdgeInsets.symmetric(horizontal: 12.0, vertical: 8.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                headingText('Shipping Address'),
+                Chip(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(6.0),
+                  ),
+                  label: Text('Change'),
+                ),
+              ],
+            ),
+          ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 12.0),
-            child: Text(address,
-                style: GoogleFonts.openSans(
-                    fontSize: 16.5,
-                    //color: Colors.black12,
-                    letterSpacing: 1.0)),
+            child: Text(
+              address,
+              style: GoogleFonts.openSans(
+                fontSize: 16.5,
+                //color: Colors.black12,
+                letterSpacing: 1.0,
+              ),
+            ),
           )
         ]),
       ),

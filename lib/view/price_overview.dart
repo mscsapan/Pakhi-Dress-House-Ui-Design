@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'others_view.dart';
@@ -14,18 +15,19 @@ class PriceOverView extends StatelessWidget {
   Widget priceRow(String title, String price) => Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(title,
-              style: GoogleFonts.openSans(
-                  fontWeight: FontWeight.w700,
-                  color: Colors.grey,
-                  fontSize: 14.0)),
+          Text(
+            title,
+            style: GoogleFonts.openSans(
+                fontWeight: FontWeight.w700,
+                color: Colors.grey,
+                fontSize: 14.0),
+          ),
           Text(
             price,
             style: GoogleFonts.openSans(
-              fontWeight: FontWeight.bold,
-              color: Colors.green,
-              fontSize: 16.0,
-            ),
+                fontWeight: FontWeight.bold,
+                color: Colors.green,
+                fontSize: 16.0),
           ),
         ],
       );
@@ -49,6 +51,13 @@ class PriceOverView extends StatelessWidget {
                 child: ListView(
                   controller: scroll,
                   children: [
+                    Align(
+                      alignment: Alignment.topCenter,
+                      child: FaIcon(
+                        FontAwesomeIcons.angleUp,
+                        color: Colors.black,
+                      ),
+                    ),
                     headingText('Price Overview'),
                     Column(
                       children: List.generate(
@@ -63,14 +72,17 @@ class PriceOverView extends StatelessWidget {
                                 color: Colors.grey,
                                 fontSize: 14.0)),
                         Chip(
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(12.0),
-                            ),
-                            label: Text('View Coupon'.toUpperCase(),
-                                style: GoogleFonts.poppins(
-                                    fontWeight: FontWeight.w500,
-                                    color: Colors.black,
-                                    fontSize: 16.0)))
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12.0),
+                          ),
+                          label: Text(
+                            'View Coupon'.toUpperCase(),
+                            style: GoogleFonts.poppins(
+                                fontWeight: FontWeight.w500,
+                                color: Colors.black,
+                                fontSize: 16.0),
+                          ),
+                        ),
                       ],
                     ),
                     priceRow('Save', '\$25.0'),

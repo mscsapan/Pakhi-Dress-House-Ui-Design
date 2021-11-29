@@ -7,6 +7,7 @@ class HeadingController extends ChangeNotifier {
   int totalItem = 1;
   int item = 1;
   var cartItem = <Product>[];
+  int cardPosition = 0;
 
   double get totalAmount =>
       <Product>[].fold(0, (sum, item) => sum + item.price);
@@ -42,5 +43,10 @@ class HeadingController extends ChangeNotifier {
       item++;
       notifyListeners();
     }
+  }
+
+  void checkPaymentOption(int index) {
+    cardPosition = index;
+    notifyListeners();
   }
 }
