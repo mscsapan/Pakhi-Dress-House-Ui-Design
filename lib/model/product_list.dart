@@ -63,7 +63,7 @@ final List<String> scrollImage = [
   'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIhVU0phUUWJYzpQDLnua0m5sjWMxiIMiysiYk7KOaMEeTGWg5mcguNtNWI-_HYpxStq8&usqp=CAU',
   'https://pantaloons.imgix.net/img/app/product/2/288634-1229197.jpg?w=618&auto=format',
   'https://paisley.in/wp-content/uploads/2018/04/K-848-2-768x992.jpg',
-  'https://shopthatoutfit.com/wp-content/uploads/2017/04/embroidery-blouses-shirts-2017-women-flower-printed-blouse-long-sleeve-ruffles-tops-cute-autumn-shirts-loose.jpg_640x640.jpg',
+  'https://ae01.alicdn.com/kf/H8ef6d35d5a4843fd88f231a4f1404330s/blusas-mujer-de-moda-2020-fashion-clothing-womens-tops-blouses-shirts-ladies-tops-women-blusas-Chiffon.jpg_Q90.jpg_.webp',
 ];
 
 final List<String> categoryTitle = [

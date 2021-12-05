@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:pakhi_dress_house/view/count_button.dart';
+import 'package:transparent_image/transparent_image.dart';
 import '../model/product_model.dart';
 import 'package:provider/provider.dart';
 
@@ -10,30 +12,10 @@ class MyCartScreen extends StatelessWidget {
   final String size = 'XL';
   final String colors = 'Black';
 
-  countButton(
-          {required IconData icon,
-          required Color color,
-          required Function() onTap}) =>
-      Container(
-        height: 25.0,
-        width: 25.0,
-        alignment: Alignment.center,
-        decoration: BoxDecoration(color: color, shape: BoxShape.circle),
-        child: IconButton(
-            padding: EdgeInsets.zero,
-            splashRadius: 25.0,
-            onPressed: onTap,
-            icon: FaIcon(
-              icon,
-              size: 16.0,
-              color: Colors.black87,
-            )),
-      );
-
   @override
   Widget build(BuildContext context) {
     final countController =
-        Provider.of<HeadingController>(context, listen: true);
+        Provider.of<HeadingController>(context, listen: false);
     return Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
@@ -101,9 +83,23 @@ class MyCartScreen extends StatelessWidget {
                           width: MediaQuery.of(context).size.width * 0.3,
                           // color: Colors.deepOrange,
                           child: ClipRRect(
-                              borderRadius: BorderRadius.circular(5.0),
-                              child: Image.network(product.image,
-                                  fit: BoxFit.fill)),
+                            borderRadius: BorderRadius.circular(5.0),
+                            child: Stack(
+                              children: [
+                                Center(
+                                    child: CircularProgressIndicator(
+                                        color: Colors.orange,
+                                        strokeWidth: 2.0)),
+                                FadeInImage.memoryNetwork(
+                                    placeholder: kTransparentImage,
+                                    image: product.image,
+                                    fit: BoxFit.fill,
+                                    height: 125.0,
+                                    width: MediaQuery.of(context).size.width *
+                                        0.3),
+                              ],
+                            ),
+                          ),
                         ),
                         Padding(
                           padding: const EdgeInsets.all(6.0),
@@ -153,37 +149,7 @@ class MyCartScreen extends StatelessWidget {
                                           fontSize: 16.0,
                                           color: Colors.black)),
                                   SizedBox(width: 40.0),
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.end,
-                                    children: [
-                                      countButton(
-                                          onTap: () => countController
-                                              .totalProductCount(0),
-                                          color: Colors.grey.withOpacity(0.2),
-                                          icon: FontAwesomeIcons.minus),
-                                      Container(
-                                        margin: EdgeInsets.symmetric(
-                                            horizontal: 6.0),
-                                        child: Text(
-                                          '${countController.item}'
-                                              .padLeft(2, '0'),
-                                          style: Theme.of(context)
-                                              .textTheme
-                                              .headline2!
-                                              .copyWith(
-                                                fontSize: 18.0,
-                                                fontWeight: FontWeight.bold,
-                                              ),
-                                        ),
-                                      ),
-                                      countButton(
-                                        onTap: () => countController
-                                            .totalProductCount(1),
-                                        color: Colors.teal,
-                                        icon: FontAwesomeIcons.plus,
-                                      ),
-                                    ],
-                                  ),
+                                  CartCountButton(),
                                 ],
                               ),
                             ],

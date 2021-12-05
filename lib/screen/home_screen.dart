@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
+
 import '../controller/heading_controller.dart';
 import '../view/app_bar.dart';
 import '../view/category_heading.dart';
 import '../view/product_image.dart';
 import '../view/scrolling_image.dart';
-import 'package:provider/provider.dart';
 
 class HomeScreen extends StatelessWidget {
   @override

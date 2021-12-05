@@ -6,7 +6,7 @@ class ForYouScreen extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: Text(
-          ForYouScreen().toString(),
+          'For You Screen',
           style: Theme.of(context).textTheme.headline5!.copyWith(
                 fontSize: 20.0,
               ),

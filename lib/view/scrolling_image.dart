@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:pakhi_dress_house/controller/heading_controller.dart';
-import 'package:pakhi_dress_house/model/product_list.dart';
-import 'package:pakhi_dress_house/view/dot.dart';
+import '../controller/heading_controller.dart';
+import '../model/product_list.dart';
+import '../view/dot.dart';
 import 'package:provider/provider.dart';
 
 class ScrollingImage extends StatelessWidget {
@@ -45,7 +45,7 @@ class ScrollingImage extends StatelessWidget {
               children: List.generate(
                 scrollImage.length,
                 (index) => DotView(
-                  height: 5,
+                  height: 12,
                   position: controller.swipe_position,
                   index: index,
                   colors: Colors.deepOrange,

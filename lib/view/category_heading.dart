@@ -14,13 +14,6 @@ class CategoryHeading extends StatelessWidget {
     'For You',
   ];
 
-  final List<Widget> screens = [
-    FeedScreen(),
-    NewCollectionScreen(),
-    TrendingScreen(),
-    ForYouScreen(),
-  ];
-
   @override
   Widget build(BuildContext context) {
     final controller = Provider.of<HeadingController>(context, listen: true);
@@ -31,6 +24,7 @@ class CategoryHeading extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) => GestureDetector(
           onTap: () => controller.stateChange(index),
+          //onTap: () => controller.stateChange(screens[index], index),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [

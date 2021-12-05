@@ -21,7 +21,7 @@ PreferredSizeWidget appBar() => AppBar(
                     fontSize: 32.0,
                     fontWeight: FontWeight.bold)),
             TextSpan(
-                text: 'akhi',
+                text: 'akhi🦜',
                 style: TextStyle(
                     color: Colors.black38,
                     fontSize: 25.0,

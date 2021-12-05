@@ -15,7 +15,7 @@ class NotificationStatus extends StatelessWidget {
     FontAwesomeIcons.bell,
     FontAwesomeIcons.question,
     FontAwesomeIcons.mapMarkerAlt,
-    FontAwesomeIcons.surprise,
+    FontAwesomeIcons.gift,
   ];
 
   @override
